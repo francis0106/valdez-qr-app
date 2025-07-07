@@ -10,7 +10,7 @@
                 <v-btn  :loading="loading" color="blue" size="large" type="submit" variant="elevated" block rounded> Sign In</v-btn>
                 <v-divider class="my-5"> <p style="text-align: center;">OR</p> </v-divider>
                 
-                <v-btn  :loading="loading" color="red" size="large" type="submit" variant="elevated" block rounded> Signin with Google</v-btn>
+                <v-btn  :loading="loading" color="red" size="large" type="submit" variant="elevated" @click="signInWithGoogle" block rounded> Signin with Google</v-btn>
                 
             </v-form>
         </v-card-text>
@@ -21,5 +21,11 @@
 <script>
 export default{
     layout: "auth",
+    middleware: 'guest',
+    methods:{
+        signInWithGoogle() {
+            this.$auth.loginWith('google')
+        }
+    }
 }
 </script>

@@ -92,7 +92,7 @@
 <script>
 export default {
   name: 'DefaultLayout',
-  middleware: ['auth'],
+  middleware:['auth'],
   data () {
     return {
       clipped: false,
@@ -106,8 +106,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Sign in',
+          to: '/auth/signin'
         }
       ],
       miniVariant: false,
